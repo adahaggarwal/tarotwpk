@@ -142,6 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.testimonial-prev')?.addEventListener('click', () => setTestimonial(testimonialIndex - 1));
   document.querySelector('.testimonial-next')?.addEventListener('click', () => setTestimonial(testimonialIndex + 1));
 
+  const testimonialNav = document.querySelector('.testimonial-nav');
+  if (testimonialNav && !document.querySelector('.review-collage')) {
+    const collage = document.createElement('div');
+    collage.className = 'review-collage';
+    collage.setAttribute('aria-label', 'Written client reviews');
+    collage.innerHTML = Array.from({ length: 6 }, (_, index) => `<figure class="review-collage-item"><img src="${index + 1}.png" alt="Client review screenshot ${index + 1}" loading="lazy"></figure>`).join('');
+    testimonialNav.insertAdjacentElement('afterend', collage);
+  }
+
   testimonialCards.forEach((card) => {
     const video = card.querySelector('video');
     const playButton = card.querySelector('.video-play');

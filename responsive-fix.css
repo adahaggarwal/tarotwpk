@@ -1072,6 +1072,28 @@ main > section {
   color: #fff;
 }
 
+.review-collage {
+  width: min(100%, 1080px);
+  margin: 64px auto 0;
+  columns: 3 260px;
+  column-gap: 20px;
+}
+
+.review-collage-item {
+  margin: 0 0 20px;
+  break-inside: avoid;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(41, 39, 40, .1);
+}
+
+.review-collage-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 767px) {
   .testimonial-track {
     display: block;
@@ -1100,6 +1122,17 @@ main > section {
 
   .testimonial-card.is-active .video-controls {
     opacity: 1;
+  }
+
+  .review-collage {
+    margin-top: 48px;
+    columns: 2 140px;
+    column-gap: 12px;
+  }
+
+  .review-collage-item {
+    margin-bottom: 12px;
+    border-radius: 9px;
   }
 }
 
